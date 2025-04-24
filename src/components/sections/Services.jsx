@@ -6,7 +6,7 @@ import update from '/public/home/update.svg';
 
 export default function Services() {
     return (
-        <section className="w-full flex justify-center mb-50">
+        <section className="w-full mb-30 flex justify-center">
             <div className="w-full max-w-7/8">
                 <div className="flex flex-col max-w-1/2 w-full gap-4">
                     <h2 className="font-heading text-4xl text-primary">

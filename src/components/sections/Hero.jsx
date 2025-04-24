@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function HeroSection() {
     return (
-        <section className="w-full h-screen flex items-center justify-center">
+        <section className="w-full h-screen flex items-center justify-center lg:pt-10">
             <div className="grid grid-cols-2 max-w-7/8 w-full h-3/4">
                 <div className="flex flex-col gap-20 justify-center">
                     <div className="flex flex-col gap-4">
@@ -31,7 +31,8 @@ export default function HeroSection() {
                 <div className="w-full h-full relative">
                     <Image
                         src="/home/hero-image.png"
-                        fill={true}
+                        fill
+                        className="object-contain"
                         alt="Employees having a work meeting"
                     />
                 </div>

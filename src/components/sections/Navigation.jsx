@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function NavigationBar() {
     return (
-        <nav className="fixed top-0 left-0 w-full flex justify-center items-center bg-primary h-20">
+        <nav className="fixed top-0 left-0 w-full flex justify-center items-center bg-primary h-20 z-[600]">
             <div className="flex flex-row max-w-7/8 w-7/8 items-center justify-between">
                 <div className="text-white font-lexend font-bold text-2xl">
                     webtweaks
