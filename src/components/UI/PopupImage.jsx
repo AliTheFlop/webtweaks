@@ -8,6 +8,10 @@ export default function PopupImage({ url }) {
 
     const handleModalClick = (e) => {
         e.stopPropagation();
+
+        if (e.target.classList.contains('black-outside-modal')) {
+            setIsOpen(false);
+        }
     };
 
     return (
@@ -19,27 +23,31 @@ export default function PopupImage({ url }) {
                 src={url}
                 alt="Thumbnail image"
                 fill
-                className="object-cover"
+                className="object-cover object-top"
             />
 
             {isOpen && (
-                <div className="fixed inset-0 w-screen h-screen flex items-center justify-center bg-black/30 z-50">
-                    <div
-                        className="max-w-4xl max-h-[90vh] relative bg-white border border-black p-2 rounded-lg"
-                        onClick={handleModalClick}
-                    >
+                <div
+                    className="max-w-4xl max-h-[90vh] relative bg-white border border-black p-2 rounded-lg"
+                    onClick={handleModalClick}
+                >
+                    <div className="fixed inset-0 z-50 flex black-outside-modal items-center justify-center p-4 bg-black/50 overflow-hidden">
                         <button
                             onClick={() => setIsOpen(false)}
-                            className="absolute top-2 right-2 z-10 bg-white rounded-full p-1"
+                            className="fixed top-2 right-2 z-50 bg-white text-primary rounded-full px-4 py-2 font-extrabold"
                             aria-label="Close image popup"
                         >
                             ✕
                         </button>
-                        <div className="relative w-full h-full min-h-[300px]">
-                            <img
+                        <div className="relative w-[90vw] max-h-[90vh] overflow-auto bg-black/50 border-8 border-white">
+                            <Image
                                 src={url}
-                                alt="landing page"
-                                className="absolute top-0 left-0"
+                                alt="Thumbnail image"
+                                width={1400}
+                                height={5000}
+                                className="w-full h-auto object-contain"
+                                priority
+                                unoptimized={true}
                             />
                         </div>
                     </div>
