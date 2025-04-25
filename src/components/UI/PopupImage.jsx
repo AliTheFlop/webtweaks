@@ -16,15 +16,16 @@ export default function PopupImage({ url }) {
 
     return (
         <div
-            className="h-48 w-3/5 bg-gray-300 rounded-xl cursor-pointer relative overflow-hidden"
+            className="h-48 w-3/5 bg-gray-300 rounded-xl cursor-pointer relative overflow-hidden "
             onClick={() => setIsOpen(true)}
         >
             <Image
                 src={url}
                 alt="Thumbnail image"
                 fill
-                className="object-cover object-top"
+                className="object-cover object-top transition-all hover:object-bottom"
             />
+            <div className="absolute top-0 left-0 right-0 bottom-0 bg-black/60 hover:bg-black/20 transition-all"></div>
 
             {isOpen && (
                 <div
