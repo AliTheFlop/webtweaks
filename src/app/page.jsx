@@ -1,7 +1,7 @@
 import HeroSection from '@/components/sections/Hero';
 import NavigationBar from '@/components/sections/Navigation';
 import Services from '@/components/sections/Services';
-import OurWork from '@/components/sections/OurWork';
+import Infoblocks from '@/components/sections/Infoblocks';
 
 export default function Home() {
     return (
@@ -9,7 +9,7 @@ export default function Home() {
             <HeroSection />
             <NavigationBar />
             <Services />
-            <OurWork />
+            <Infoblocks />
         </div>
     );
 }
